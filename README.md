@@ -29,7 +29,7 @@ Check out the [self-hosting docs](https://support.rallly.co/self-hosting) for mo
 1. Clone the repository switch to the project directory
 
    ```bash
-   git clone https://github.com/lukevella/rallly.git
+   git clone https://github.com/rjtrenchard/rallly.git
    cd rallly
    ```
 
