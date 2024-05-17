@@ -1,9 +1,11 @@
 name: Playwright Tests
 on:
-  push:
-    branches: [ main, master, heartbeat ]
-  pull_request:
-    branches: [ main, master, heartbeat ]
+  # push:
+  #   branches: [ main, master, heartbeat ]
+  # pull_request:
+  #   branches: [ main, master, heartbeat ]
+  schedule:
+    - cron: "1 * * * *"
 jobs:
   test:
     timeout-minutes: 60
@@ -15,6 +17,12 @@ jobs:
         node-version: 18
     - name: Install dependencies
       run: npm i
+    - name: run yarn
+      run: yarn
+    - name: Database installation
+      run: yarn dx
+    - name: run yarn dev
+      run: yarn dev
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
