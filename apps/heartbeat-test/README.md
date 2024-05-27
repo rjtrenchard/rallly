@@ -1,11 +1,12 @@
 # App:  @rallly/heartbeat-test
 
 ## Usage
-* Run `yarn workspace @rallly/heartbeat-test test` to execute the script from the project root
+* Run `yarn workspace @rallly/heartbeat-test e2e_test` to execute the script from the project root
 
-    * heartbeat-test runs all tests in the `apps/heartbeat-test/tests` directory.
+    * heartbeat-test runs all [Playwright](https://wwww.playwright.dev) tests in the `apps/heartbeat-test/tests` directory.
 
-    * Tests are written using [Playwright's](https://wwww.playwright.dev) API
+    * From a POSIX command line this could be accomplished for the original prod server with the following:
+        * `PLAYWRIGHT_BASE_URL=https://app.rallly.co yarn workspace @rallly/heartbeat-test e2e_test`
 
 ## Configuration
 Environment file can define `PLAYWRIGHT_BASE_URL`.
