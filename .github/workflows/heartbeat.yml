@@ -3,6 +3,10 @@
 # writes a report on failure
 
 name: Heartbeat Tests
+
+env:
+  PLAYWRIGHT_BASE_URL: https://app.rally.co
+
 on:
   schedule:
     - cron: "0 * * * *"
@@ -16,10 +20,7 @@ jobs:
       with:
         node-version: 18
     - name: run yarn
-      run: yarn  
-    - name: set environment variable
-      env:
-        PLAYWRIGHT_BASE_URL: https://app.rally.co
+      run: yarn
     - name: Run Playwright tests
       run: yarn workspace @rallly/heartbeat-test test
     - uses: actions/upload-artifact@v4
