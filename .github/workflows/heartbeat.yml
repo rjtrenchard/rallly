@@ -24,7 +24,7 @@ jobs:
     - name: run yarn
       run: yarn
     - name: run Playwright install
-      run: yarn playwright install
+      run: yarn playwright install --with-deps
     - name: Run Playwright tests
       run: yarn workspace @rallly/heartbeat-test e2e_test
     - uses: actions/upload-artifact@v4
